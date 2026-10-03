@@ -15,12 +15,12 @@ spring:
         cors-configurations:
           '[/**]':
             allowedOrigins:
-  - "http://localhost:4200"
-  - "http://localhost:8080"
-  - "http://localhost:8081"
-  - "http://localhost:8082"
-  - "http://localhost:8083"
-  - "http://localhost:8085"
+              - "http://localhost:4200"
+              - "http://localhost:8080"
+              - "http://localhost:8081"
+              - "http://localhost:8082"
+              - "http://localhost:8083"
+              - "http://localhost:8085"
 
             allowedMethods:
               - GET
@@ -39,12 +39,12 @@ spring:
 
       routes:
 
-- id: swagger-redirect
-  uri: no://op
-  predicates:
-    - Path=/swagger-ui/index.html
-  filters:
-    - RedirectTo=302, /swagger-ui.html
+        - id: swagger-redirect
+          uri: no://op
+          predicates:
+            - Path=/swagger-ui/index.html
+          filters:
+            - RedirectTo=302, /swagger-ui.html
 
         - id: ms-security-docs
           uri: lb://MS-SECURITY
@@ -124,14 +124,6 @@ springdoc:
 
   api-docs:
     enabled: true
-
-
-gateway:
-  internal-secret: "Mayra127"
-
-
-jwt:
-  secret: MbX5uQalGUKJy6gCTDLFi3g29u8k7JuhqYIYtGHhxfvcDqpQGIdFU09C+7HH6R5TcPbganTvT4QGd9oxNL/V6g==
 
 eureka:
   client:
