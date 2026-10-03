@@ -1,17 +1,21 @@
 server:
   port: 8082
-  forward-headers-strategy: framework
 
 spring:
+  application:
+    name: MS-ALUMNOS
+
   datasource:
     url: jdbc:h2:mem:alumnosdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
     driver-class-name: org.h2.Driver
     username: sa
-    password: 
+    password:
+
   h2:
     console:
       enabled: true
       path: /h2-console
+
   jpa:
     database-platform: org.hibernate.dialect.H2Dialect
     hibernate:
@@ -24,7 +28,7 @@ springdoc:
 eureka:
   client:
     service-url:
-      defaultZone: http://eurekaserver:8761/eureka/
+      defaultZone: http://localhost:8761/eureka/
 
 management:
   endpoints:
@@ -34,3 +38,6 @@ management:
   endpoint:
     health:
       show-details: always
+
+gateway:
+  internal-secret: "Mayra127"
