@@ -1,8 +1,9 @@
 server:
   port: 8081
-  forward-headers-strategy: framework
-  
+
 spring:
+  application:
+    name: MS-CURSOS
   datasource:
     url: jdbc:h2:mem:cursosdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
     driver-class-name: org.h2.Driver
@@ -16,7 +17,7 @@ spring:
     database-platform: org.hibernate.dialect.H2Dialect
     hibernate:
       ddl-auto: update
-
+ 
 springdoc:
   api-docs:
     path: /v3/api-docs
@@ -24,7 +25,7 @@ springdoc:
 eureka:
   client:
     service-url:
-      defaultZone: http://eurekaserver:8761/eureka/
+      defaultZone: http://localhost:8761/eureka/
 
 management:
   endpoints:
@@ -34,3 +35,6 @@ management:
   endpoint:
     health:
       show-details: always
+
+gateway:
+  internal-secret: "Mayra127"
