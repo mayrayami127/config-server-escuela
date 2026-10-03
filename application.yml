@@ -1,0 +1,4 @@
+jwt:
+  secret: <el-base64-que-generaste>
+gateway:
+  internal-secret: <otro-valor-largo-al-azar>
