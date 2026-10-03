@@ -39,6 +39,13 @@ spring:
 
       routes:
 
+- id: swagger-redirect
+  uri: no://op
+  predicates:
+    - Path=/swagger-ui/index.html
+  filters:
+    - RedirectTo=302, /swagger-ui.html
+
         - id: ms-security-docs
           uri: lb://MS-SECURITY
           predicates:
